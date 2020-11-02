@@ -4,7 +4,7 @@ void UserManager::userRegister() {
     User user=typeUserData();
 
     users.push_back(user);
-
+    xmlFileWithUsers.addUserToFile(user);
     cout<<"Register completed."<<endl;
     system("pause");
 }
