@@ -22,7 +22,7 @@ void User::setSurname(string newSurname){
     surname=newSurname;
 }
 
-int User::gerId(){
+int User::getId(){
     return id;
 }
 

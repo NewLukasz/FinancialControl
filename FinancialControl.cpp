@@ -16,3 +16,7 @@ char FinancialControl::chooseOptionFromMainMenu(){
 void FinancialControl::userRegister(){
     userManager.userRegister();
 }
+
+int FinancialControl::loginUser(){
+    return userManager.loginUser();
+}
