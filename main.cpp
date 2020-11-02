@@ -10,8 +10,7 @@ int main() {
         choice=financialControl.chooseOptionFromMainMenu();
         switch(choice){
     case '1':
-        cout<<"Register is chosen one"<<endl;
-        system("pause");
+        financialControl.userRegister();
         break;
     case '2':
         cout<<"Logon is chosen one"<<endl;
