@@ -16,6 +16,7 @@ void XMLFileWithUsers::addUserToFile(User user) {
     xml.IntoElem();
     xml.AddElem("UserId",user.getId());
     xml.AddElem("Login", user.getLogin());
+    xml.AddElem("Password", user.getPassword());
     xml.AddElem("Name", user.getName());
     xml.AddElem("Surname", user.getSurname());
     xml.Save("users.xml");
