@@ -14,3 +14,10 @@ char AccesoryFunctions::getChar() {
     }
     return sign;
 }
+
+string AccesoryFunctions::getLine() {
+    cin.sync();
+    string dataInsert = "";
+    getline(cin, dataInsert);
+    return dataInsert;
+}

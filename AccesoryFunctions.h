@@ -7,6 +7,7 @@ using namespace std;
 class AccesoryFunctions{
 public:
     static char getChar();
+    static string getLine();
 };
 
 #endif // ACCESORYFUNCTIONS_H

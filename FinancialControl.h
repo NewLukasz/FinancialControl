@@ -12,6 +12,7 @@ class FinancialControl{
 public:
     char chooseOptionFromMainMenu();
     void userRegister();
+    int loginUser();
 };
 
 #endif // FINANCIALCONTROL_H

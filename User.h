@@ -14,7 +14,7 @@ public:
     void setName(string newName);
     void setSurname(string newSurname);
 
-    int gerId();
+    int getId();
     string getLogin();
     string getPassword();
     string getName();
