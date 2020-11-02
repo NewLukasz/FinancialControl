@@ -4,11 +4,14 @@
 #include <iostream>
 #include <cstdlib>
 #include "AccesoryFunctions.h"
+#include "UserManager.h"
 using namespace std;
 
 class FinancialControl{
+    UserManager userManager;
 public:
     char chooseOptionFromMainMenu();
+    void userRegister();
 };
 
 #endif // FINANCIALCONTROL_H

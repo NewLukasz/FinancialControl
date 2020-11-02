@@ -12,3 +12,7 @@ char FinancialControl::chooseOptionFromMainMenu(){
 
     return choice;
 }
+
+void FinancialControl::userRegister(){
+    userManager.userRegister();
+}
