@@ -2,7 +2,6 @@
 
 void UserManager::userRegister() {
     User user=typeUserData();
-
     users.push_back(user);
     xmlFileWithUsers.addUserToFile(user);
     cout<<"Register completed."<<endl;
@@ -49,6 +48,7 @@ int UserManager::loginUser() {
                 if(password==users[i].getPassword()) {
                     cout<<"Login is succesful"<<endl;
                     system("pause");
+                    idLoggedInUser=users[i].getId();
                     return users[i].getId();
                 }
                 cout<<endl<<"You typed incorrect password. Attempts left: "<<attempt-1<<"."<<endl;

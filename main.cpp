@@ -16,7 +16,6 @@ int main() {
                 break;
             case '2':
                 idLoggedInUser=financialControl.loginUser();
-                cout<<idLoggedInUser<<endl;
                 break;
             case '3':
                 exit(0);
@@ -27,7 +26,30 @@ int main() {
                 break;
             }
         } else {
-            break;
+            choice = financialControl.chooseOptionFromUserMenu();
+            switch(choice) {
+            case '1':
+                cout<<"Adding and income..."<<endl;
+                break;
+            case '2':
+                cout<<"Adding and expense..."<<endl;
+                break;
+            case '3':
+                cout<<"Show balance..."<<endl;
+                break;
+            case '4':
+                cout<<"Show balance..."<<endl;
+                break;
+            case '5':
+                cout<<"Show balance..."<<endl;
+                break;
+            case '6':
+                cout<<"Change password..."<<endl;
+                break;
+            case '9':
+                idLoggedInUser=0;
+                break;
+            }
         }
     }
 

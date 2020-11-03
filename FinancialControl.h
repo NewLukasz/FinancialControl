@@ -13,6 +13,7 @@ class FinancialControl{
 public:
     FinancialControl(string fileNameForFileWithUsers) : userManager(fileNameForFileWithUsers), FILE_NAME_FOR_FILE_WITH_USERS(fileNameForFileWithUsers){};
     char chooseOptionFromMainMenu();
+    char chooseOptionFromUserMenu();
     void userRegister();
     int loginUser();
 };

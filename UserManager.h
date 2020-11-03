@@ -16,6 +16,7 @@ class UserManager{
     XMLFileWithUsers xmlFileWithUsers;
 public:
     UserManager(string fileNameForFileWithUsers) : xmlFileWithUsers(fileNameForFileWithUsers){
+        idLoggedInUser=0;
         users=xmlFileWithUsers.loadUsersFromFile();
     };
     void userRegister();

@@ -66,8 +66,6 @@ int XMLFileWithUsers::getLastUserId(){
             xml.IntoElem();
             xml.FindElem("UserId");
             lastUserId=atoi(xml.GetData().c_str());
-            cout<<lastUserId<<endl;
-            system("pause");
             xml.OutOfElem();
         }
     }

@@ -20,3 +20,21 @@ void FinancialControl::userRegister(){
 int FinancialControl::loginUser(){
     return userManager.loginUser();
 }
+
+char FinancialControl::chooseOptionFromUserMenu(){
+    char choice;
+    system("cls");
+    cout<<"   USER MENU   "<<endl;
+    cout<<"1. Add income"<<endl;
+    cout<<"2. Add expense"<<endl;
+    cout<<"3. Balance from current month"<<endl;
+    cout<<"4. Balance from previous month"<<endl;
+    cout<<"5. Balance from custom period of time"<<endl;
+    cout<<"6. Change password"<<endl;
+    cout<<"9. Logout"<<endl;
+    cout<<"Your choice: ";
+
+    choice=AccesoryFunctions::getChar();
+
+    return choice;
+}
