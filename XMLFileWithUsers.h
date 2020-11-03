@@ -7,7 +7,9 @@
 using namespace std;
 
 class XMLFileWithUsers{
+    const string fileNameForFileWithUsers;
 public:
+    XMLFileWithUsers(string FILENAMEFORFILEWITHUSERS) : fileNameForFileWithUsers(FILENAMEFORFILEWITHUSERS){};
     void addUserToFile(User user);
 };
 
