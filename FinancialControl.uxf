@@ -189,7 +189,7 @@
       <w>196</w>
       <h>91</h>
     </coordinates>
-    <panel_attributes>FileWithUsers
+    <panel_attributes>XMLFileWithUsers
 -
 + FileWithUsers()
 + addUserToFile() : void
@@ -223,7 +223,7 @@
       <x>259</x>
       <y>714</y>
       <w>238</w>
-      <h>105</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>XMLFinancialFile
 -
@@ -231,7 +231,6 @@
 + addFinancialMovementToFile() : void
 + getLastFinancialOperationId() : Integer
 + typeDataForNewFinancialOperation() : void
-+ checkDate() : Bool
 + loadDataFromXMLFile () : void
 
 </panel_attributes>
@@ -428,14 +427,12 @@
     <id>UMLClass</id>
     <coordinates>
       <x>637</x>
-      <y>630</y>
+      <y>651</y>
       <w>189</w>
-      <h>98</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>AccesoryFunctions
 -
-+ convertStringDateToTimeT() : time_t
-+ convertTimeTToString() : String
 + converIntToString() : String
 + convertStringToInt() : String
 + getLine() : String
@@ -449,10 +446,10 @@
       <x>518</x>
       <y>301</y>
       <w>231</w>
-      <h>343</h>
+      <h>364</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;10.0;200.0;280.0;310.0;280.0;310.0;470.0</additional_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0;200.0;280.0;310.0;280.0;310.0;500.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -460,10 +457,10 @@
       <x>770</x>
       <y>455</y>
       <w>21</w>
-      <h>189</h>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -490,15 +487,18 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>259</x>
       <y>602</y>
-      <w>189</w>
-      <h>56</h>
+      <w>224</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>DateAccesoryFunctions
 -
 + checkDate() : Bool
-+ convertStringDataToTimeT() : time_t</panel_attributes>
++ convertStringDataToTimeT() : time_t
++ convertTimeTToString() : String
++ getTodayDate() : time_t
+- checkHowManyDaysHasIndicatedMonth() : int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -506,22 +506,22 @@
     <coordinates>
       <x>161</x>
       <y>602</y>
-      <w>133</w>
+      <w>112</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0;170.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;140.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
+      <x>476</x>
       <y>595</y>
-      <w>84</w>
+      <w>70</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;10.0;100.0;60.0;10.0;60.0</additional_attributes>
+    <additional_attributes>80.0;10.0;80.0;60.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -538,11 +538,11 @@
     <id>Relation</id>
     <coordinates>
       <x>357</x>
-      <y>651</y>
+      <y>672</y>
       <w>21</w>
-      <h>77</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

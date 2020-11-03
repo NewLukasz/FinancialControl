@@ -53,10 +53,10 @@ int UserManager::loginUser() {
                 }
                 cout<<endl<<"You typed incorrect password. Attempts left: "<<attempt-1<<"."<<endl;
             }
+            cout<<endl<<"You typed incorrect password three times."<<endl;
+            system("pause");
+            return 0;
         }
-        cout<<endl<<"You typed incorrect password three times."<<endl;
-        system("pause");
-        return 0;
     }
     cout<<"User with login: "<<login<<" doesn't exist"<<endl;
     system("pause");
