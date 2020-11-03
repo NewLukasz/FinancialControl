@@ -50,3 +50,26 @@ vector <User> XMLFileWithUsers::loadUsersFromFile(){
     }
     return users;
 }
+
+int XMLFileWithUsers::getLastUserId(){
+    int lastUserId=1;
+    CMarkup xml;
+
+    bool fileExists = xml.Load(fileNameForFileWithUsers);
+
+    if(!fileExists){
+        return lastUserId;
+    }else{
+        xml.FindElem();
+        xml.IntoElem();
+        while(xml.FindElem("User")){
+            xml.IntoElem();
+            xml.FindElem("UserId");
+            lastUserId=atoi(xml.GetData().c_str());
+            cout<<lastUserId<<endl;
+            system("pause");
+            xml.OutOfElem();
+        }
+    }
+    return lastUserId+1;
+}
