@@ -2,7 +2,7 @@
 
 void XMLFileWithUsers::addUserToFile(User user) {
     CMarkup xml;
-    bool fileExists = xml.Load("users.xml");
+    bool fileExists = xml.Load(fileNameForFileWithUsers);
     if(!fileExists) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
@@ -16,6 +16,5 @@ void XMLFileWithUsers::addUserToFile(User user) {
     xml.AddElem("Password", user.getPassword());
     xml.AddElem("Name", user.getName());
     xml.AddElem("Surname", user.getSurname());
-    xml.Save("users.xml");
+    xml.Save(fileNameForFileWithUsers);
 }
-

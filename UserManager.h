@@ -15,6 +15,7 @@ class UserManager{
     int idLoggedInUser;
     XMLFileWithUsers xmlFileWithUsers;
 public:
+    UserManager(string fileNameForFileWithUsers) : xmlFileWithUsers(fileNameForFileWithUsers){};
     void userRegister();
     int loginUser();
 };

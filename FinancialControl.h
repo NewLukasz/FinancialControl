@@ -9,7 +9,9 @@ using namespace std;
 
 class FinancialControl{
     UserManager userManager;
+    const string FILE_NAME_FOR_FILE_WITH_USERS;
 public:
+    FinancialControl(string fileNameForFileWithUsers) : userManager(fileNameForFileWithUsers), FILE_NAME_FOR_FILE_WITH_USERS(fileNameForFileWithUsers){};
     char chooseOptionFromMainMenu();
     void userRegister();
     int loginUser();
