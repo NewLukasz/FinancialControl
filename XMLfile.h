@@ -7,10 +7,7 @@
 using namespace std;
 
 class XMLFile{
-    string fileName;
 public:
-    CMarkup xml;
-    bool checkFileIsExists(string fileName);
 };
 
 class XMLFileWithUsers : public XMLFile{
