@@ -14,6 +14,8 @@ class UserManager{
     User typeUserData();
     int idLoggedInUser;
     XMLFileWithUsers xmlFileWithUsers;
+
+    bool checkLoginExists(string loginForCheck);
 public:
     UserManager(string fileNameForFileWithUsers) : xmlFileWithUsers(fileNameForFileWithUsers){
         idLoggedInUser=0;
