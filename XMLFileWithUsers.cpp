@@ -1,11 +1,9 @@
-#include "XMLfile.h"
+#include "XMLFileWithUsers.h"
 
 void XMLFileWithUsers::addUserToFile(User user) {
     CMarkup xml;
     bool fileExists = xml.Load("users.xml");
     if(!fileExists) {
-        cout<<"JESTEM TUTAJ?"<<endl;
-        system("pause");
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("Users");
     }

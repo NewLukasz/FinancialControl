@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include "User.h"
 #include "AccesoryFunctions.h"
-#include "XMLfile.h"
+#include "XMLFileWithUsers.h"
 using namespace std;
 
 class UserManager{

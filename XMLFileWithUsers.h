@@ -1,18 +1,14 @@
-#ifndef XMLFILE_H
-#define XMLFILE_H
+#ifndef XMLFILEWITHUSERS_H
+#define XMLFILEWITHUSERS_H
 
 #include <iostream>
 #include "Markup.h"
 #include "User.h"
 using namespace std;
 
-class XMLFile{
-public:
-};
-
-class XMLFileWithUsers : public XMLFile{
+class XMLFileWithUsers{
 public:
     void addUserToFile(User user);
 };
 
-#endif // XMLFILE_H
+#endif
