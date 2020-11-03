@@ -18,3 +18,35 @@ void XMLFileWithUsers::addUserToFile(User user) {
     xml.AddElem("Surname", user.getSurname());
     xml.Save(fileNameForFileWithUsers);
 }
+
+vector <User> XMLFileWithUsers::loadUsersFromFile(){
+    vector <User> users;
+    User user;
+    CMarkup xml;
+
+    bool fileExists=xml.Load(fileNameForFileWithUsers);
+
+    if(!fileExists){
+        cout<<"There are no users registered. Start from register."<<endl;
+        system("pause");
+    }else{
+        xml.FindElem();
+        xml.IntoElem();
+        while(xml.FindElem("User")){
+            xml.IntoElem();
+            xml.FindElem("UserId");
+            user.setId(atoi(xml.GetData().c_str()));
+            xml.FindElem("Login");
+            user.setLogin(xml.GetData());
+            xml.FindElem("Password");
+            user.setPassword(xml.GetData());
+            xml.FindElem("Name");
+            user.setName(xml.GetData());
+            xml.FindElem("Surname");
+            user.setSurname(xml.GetData());
+            xml.OutOfElem();
+            users.push_back(user);
+        }
+    }
+    return users;
+}
