@@ -14,22 +14,27 @@ User UserManager::typeUserData() {
     user.setId(xmlFileWithUsers.getLastUserId());
     string login;
     cout<<"Type login: ";
-    cin>>login;
+    login=AccesoryFunctions::getLine();
+    while(checkLoginExists(login)){
+        cout<<endl<<"Login: "<<login<<" exists. Choose another one."<<endl<<endl;
+        cout<<"Type login: ";
+        login=AccesoryFunctions::getLine();
+    }
     user.setLogin(login);
 
     string password;
     cout<<"Type password: ";
-    cin>>password;
+    password=AccesoryFunctions::getLine();
     user.setPassword(password);
 
     string name;
     cout<<"Type your name: ";
-    cin>>name;
+    name=AccesoryFunctions::getLine();
     user.setName(name);
 
     string surname;
     cout<<"Type your surname: ";
-    cin>>surname;
+    surname=AccesoryFunctions::getLine();
     user.setSurname(surname);
 
     return user;
@@ -61,4 +66,13 @@ int UserManager::loginUser() {
     cout<<"User with login: "<<login<<" doesn't exist"<<endl;
     system("pause");
     return 0;
+}
+
+bool UserManager::checkLoginExists(string loginForCheck){
+    for(int i=0;i<users.size();i++){
+        if(users[i].getLogin()==loginForCheck){
+            return true;
+        }
+    }
+    return false;
 }
