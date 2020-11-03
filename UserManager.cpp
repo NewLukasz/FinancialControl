@@ -12,7 +12,7 @@ void UserManager::userRegister() {
 User UserManager::typeUserData() {
     system("cls");
     User user;
-    user.setId(1);
+    user.setId(xmlFileWithUsers.getLastUserId());
     string login;
     cout<<"Type login: ";
     cin>>login;

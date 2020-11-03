@@ -13,6 +13,7 @@ public:
     XMLFileWithUsers(string FILENAMEFORFILEWITHUSERS) : fileNameForFileWithUsers(FILENAMEFORFILEWITHUSERS){};
     void addUserToFile(User user);
     vector <User> loadUsersFromFile();
+    int getLastUserId();
 };
 
 #endif
