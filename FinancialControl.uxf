@@ -202,24 +202,6 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>770</y>
-      <w>161</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>XMLFile
--
-- FILE_NAME : String
--
-+ XMLFile()
-+ checkFileIsEmpty () : Bool
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>259</x>
       <y>714</y>
       <w>238</w>
@@ -257,28 +239,6 @@
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;60.0;40.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>490</x>
-      <y>742</y>
-      <w>175</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>230.0;40.0;230.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>721</x>
-      <y>742</y>
-      <w>161</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
