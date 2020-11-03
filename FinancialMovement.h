@@ -19,7 +19,6 @@ public:
     void setDate(time_t newDate);
     void setItem(string newItem);
     void setAmount(double newAmount);
-
 };
 
 #endif // FINANCIALMOVEMENT_H
