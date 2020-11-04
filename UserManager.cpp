@@ -81,3 +81,11 @@ int UserManager::logout(){
     idLoggedInUser=0;
     return 0;
 }
+
+bool UserManager::checkIfUserIsLogin(){
+    if(idLoggedInUser==0){
+        return 0;
+    }else{
+        return 1;
+    }
+}

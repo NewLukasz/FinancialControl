@@ -24,6 +24,7 @@ public:
     void userRegister();
     int loginUser();
     int logout();
+    bool checkIfUserIsLogin();
 };
 
 #endif // USERMANAGER_H
