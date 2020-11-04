@@ -29,7 +29,8 @@ int main() {
             choice = financialControl.chooseOptionFromUserMenu();
             switch(choice) {
             case '1':
-                cout<<"Adding and income..."<<endl;
+                system("cls");
+                cout<<">>>Adding an income<<<"<<endl;
                 financialControl.addIncome();
                 break;
             case '2':

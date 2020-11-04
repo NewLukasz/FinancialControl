@@ -5,6 +5,7 @@
 #include <vector>
 #include "Income.h"
 #include "Expense.h"
+#include "DateAccesoryFunctions.h"
 using namespace std;
 
 class FinancialManager {
@@ -12,10 +13,7 @@ class FinancialManager {
     vector <Income> incomes;
     vector <Expense> expenses;
 public:
-    FinancialManager(string nameForFileWithIncomes, string nameForFileWithExpenses, int loggedInUser) : LOGGED_IN_USER(loggedInUser) {
-        cout<<loggedInUser<<endl;
-        system("pause");
-    };
+    FinancialManager(string nameForFileWithIncomes, string nameForFileWithExpenses, int loggedInUser) : LOGGED_IN_USER(loggedInUser) {};
     void addIncome();
     void addExpense();
 };

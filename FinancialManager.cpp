@@ -6,6 +6,5 @@ void FinancialManager::addIncome(){
     income.setIncomeId(1);
     income.setUserId(LOGGED_IN_USER);
     income.showAllDataOfFinancialMovement();
-
     incomes.push_back(income);
 }
