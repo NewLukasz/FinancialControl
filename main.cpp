@@ -47,7 +47,7 @@ int main() {
                 cout<<"Change password..."<<endl;
                 break;
             case '9':
-                idLoggedInUser=0;
+                idLoggedInUser=financialControl.logout();
                 break;
             }
         }

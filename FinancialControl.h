@@ -16,6 +16,7 @@ public:
     char chooseOptionFromUserMenu();
     void userRegister();
     int loginUser();
+    int logout();
 };
 
 #endif // FINANCIALCONTROL_H

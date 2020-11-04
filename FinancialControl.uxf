@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>483</x>
+      <x>525</x>
       <y>0</y>
       <w>308</w>
       <h>231</h>
@@ -35,7 +35,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>714</x>
+      <x>756</x>
       <y>273</y>
       <w>287</w>
       <h>189</h>
@@ -63,7 +63,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>238</x>
+      <x>280</x>
       <y>238</y>
       <w>287</w>
       <h>175</h>
@@ -90,7 +90,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>819</x>
+      <x>861</x>
       <y>497</y>
       <w>196</w>
       <h>91</h>
@@ -107,7 +107,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>322</x>
       <y>511</y>
       <w>161</w>
       <h>70</h>
@@ -124,7 +124,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>154</x>
+      <x>196</x>
       <y>455</y>
       <w>161</w>
       <h>35</h>
@@ -138,7 +138,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>427</x>
+      <x>469</x>
       <y>455</y>
       <w>161</w>
       <h>35</h>
@@ -152,7 +152,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>42</x>
       <y>546</y>
       <w>238</w>
       <h>63</h>
@@ -167,7 +167,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
+      <x>532</x>
       <y>546</y>
       <w>238</w>
       <h>56</h>
@@ -184,12 +184,14 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>868</x>
+      <x>910</x>
       <y>686</y>
       <w>196</w>
       <h>91</h>
     </coordinates>
     <panel_attributes>XMLFileWithUsers
+-
+- fileNameForFileWithUsers : String
 -
 + FileWithUsers()
 + addUserToFile() : void
@@ -202,14 +204,13 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>259</x>
+      <x>301</x>
       <y>714</y>
       <w>238</w>
       <h>91</h>
     </coordinates>
     <panel_attributes>XMLFinancialFile
 -
-+ XMLFinancialFile()
 + addFinancialMovementToFile() : void
 + getLastFinancialOperationId() : Integer
 + typeDataForNewFinancialOperation() : void
@@ -221,7 +222,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
+      <x>434</x>
       <y>469</y>
       <w>49</w>
       <h>56</h>
@@ -232,7 +233,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
+      <x>350</x>
       <y>469</y>
       <w>42</w>
       <h>56</h>
@@ -243,7 +244,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>399</x>
+      <x>441</x>
       <y>595</y>
       <w>182</w>
       <h>133</h>
@@ -254,7 +255,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>91</x>
+      <x>133</x>
       <y>602</y>
       <w>252</w>
       <h>126</h>
@@ -265,7 +266,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>371</x>
+      <x>413</x>
       <y>119</y>
       <w>126</w>
       <h>133</h>
@@ -276,7 +277,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>784</x>
+      <x>826</x>
       <y>119</y>
       <w>84</w>
       <h>168</h>
@@ -287,7 +288,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>273</x>
+      <x>315</x>
       <y>406</y>
       <w>21</w>
       <h>63</h>
@@ -298,7 +299,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>434</x>
+      <x>476</x>
       <y>406</y>
       <w>21</w>
       <h>63</h>
@@ -309,7 +310,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
+      <x>560</x>
       <y>350</y>
       <w>126</w>
       <h>210</h>
@@ -320,7 +321,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>77</x>
+      <x>119</x>
       <y>357</y>
       <w>175</w>
       <h>203</h>
@@ -331,7 +332,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
+      <x>952</x>
       <y>455</y>
       <w>21</w>
       <h>56</h>
@@ -342,7 +343,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>994</x>
+      <x>1036</x>
       <y>378</y>
       <w>56</w>
       <h>322</h>
@@ -353,7 +354,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
+      <x>623</x>
       <y>462</y>
       <w>42</w>
       <h>98</h>
@@ -364,7 +365,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
+      <x>168</x>
       <y>462</y>
       <w>42</w>
       <h>98</h>
@@ -375,7 +376,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
+      <x>952</x>
       <y>581</y>
       <w>21</w>
       <h>119</h>
@@ -386,7 +387,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>637</x>
+      <x>679</x>
       <y>651</y>
       <w>189</w>
       <h>70</h>
@@ -403,7 +404,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
+      <x>560</x>
       <y>301</y>
       <w>231</w>
       <h>364</h>
@@ -414,7 +415,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
+      <x>812</x>
       <y>455</y>
       <w>21</w>
       <h>210</h>
@@ -425,7 +426,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
+      <x>532</x>
       <y>700</y>
       <w>161</w>
       <h>35</h>
@@ -436,7 +437,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>819</x>
+      <x>861</x>
       <y>707</y>
       <w>63</w>
       <h>21</h>
@@ -447,7 +448,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>259</x>
+      <x>301</x>
       <y>602</y>
       <w>224</w>
       <h>77</h>
@@ -464,7 +465,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>161</x>
+      <x>203</x>
       <y>602</y>
       <w>112</w>
       <h>49</h>
@@ -475,7 +476,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>476</x>
+      <x>518</x>
       <y>595</y>
       <w>70</w>
       <h>56</h>
@@ -486,7 +487,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>357</x>
+      <x>399</x>
       <y>574</y>
       <w>21</w>
       <h>42</h>
@@ -497,7 +498,7 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>357</x>
+      <x>399</x>
       <y>672</y>
       <w>21</w>
       <h>56</h>

@@ -13,14 +13,6 @@ char FinancialControl::chooseOptionFromMainMenu(){
     return choice;
 }
 
-void FinancialControl::userRegister(){
-    userManager.userRegister();
-}
-
-int FinancialControl::loginUser(){
-    return userManager.loginUser();
-}
-
 char FinancialControl::chooseOptionFromUserMenu(){
     char choice;
     system("cls");
@@ -37,4 +29,16 @@ char FinancialControl::chooseOptionFromUserMenu(){
     choice=AccesoryFunctions::getChar();
 
     return choice;
+}
+
+void FinancialControl::userRegister(){
+    userManager.userRegister();
+}
+
+int FinancialControl::loginUser(){
+    return userManager.loginUser();
+}
+
+int FinancialControl::logout(){
+    return userManager.logout();
 }
