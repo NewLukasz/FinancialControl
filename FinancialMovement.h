@@ -13,6 +13,8 @@ class FinancialMovement{
     time_t date;
     string item;
     double amount;
+    double insertAmount();
+    bool checkIfAmountInStringContainLetter(string amountInString);
 public:
     int getUserId();
     time_t getDate();

@@ -40,7 +40,7 @@ void FinancialMovement::showAllDataOfFinancialMovement() {
     system("pause");
 }
 
-void FinancialMovement::typeDateItemAmountForFinancialMovement() {
+void FinancialMovement::typeDateItemAmountForFinancialMovement(){
     cout<<"Is financial movement should be added with today date? (y/n)";
     char choice=AccesoryFunctions::getChar();
     while(choice!='n'&&choice!='y') {
@@ -54,12 +54,40 @@ void FinancialMovement::typeDateItemAmountForFinancialMovement() {
             cout<<"Insert date again (format yyyy-mm-dd): ";
             stringDate=AccesoryFunctions::getLine();
         }
-        date=DateAccesoryFunctions::convertStringDataToTimeT(stringDate);
+        setDate(date=DateAccesoryFunctions::convertStringDataToTimeT(stringDate));
     } else if(choice=='y') {
-        date=DateAccesoryFunctions::getTodayDate();
+        setDate(date=DateAccesoryFunctions::getTodayDate());
     }
     cout<<"Type source/destination of financial movement: ";
-    item=AccesoryFunctions::getLine();
+    setItem(item=AccesoryFunctions::getLine());
     cout<<"Type amount: ";
-    cin>>amount;
+    setAmount(insertAmount());
+}
+
+bool FinancialMovement::checkIfAmountInStringContainLetter(string amountInString){
+    for(int i=0; i<amountInString.length(); i++) {
+        if(isdigit(amountInString[i])==0) {
+            if(amountInString[i]==','||amountInString[i]=='.'){
+                continue;
+            } else {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+double FinancialMovement::insertAmount(){
+    string amountInString=AccesoryFunctions::getLine();
+    while(checkIfAmountInStringContainLetter(amountInString)) {
+        cout<<"You typed wrong sings. Try again: ";
+        amountInString=AccesoryFunctions::getLine();
+    }
+    for(int i=0; i<amountInString.length(); i++) {
+        if(amountInString[i]==',') {
+            amountInString[i]='.';
+        }
+    }
+    double amount=atof(amountInString.c_str());
+    return amount;
 }
