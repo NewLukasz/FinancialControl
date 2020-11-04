@@ -7,3 +7,9 @@ string DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(time_t
     strftime(bufor,sizeof(bufor),"%Y-%m-%d",&timeStucture);
     return bufor;
 }
+
+time_t DateAccesoryFunctions::getTodayDate(){
+    time_t today;
+    time(&today);
+    return today;
+}

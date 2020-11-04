@@ -9,6 +9,7 @@ using namespace std;
 class DateAccesoryFunctions {
 public:
     static string convertTimeTToDateInStringWithCorrectFormat(time_t timeInTimeTFormat);
+    static time_t getTodayDate();
 };
 
 #endif // DATEACCESORYFUNCTIONS_H
