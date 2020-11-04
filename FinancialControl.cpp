@@ -3,7 +3,7 @@
 char FinancialControl::chooseOptionFromMainMenu(){
     char choice;
     system("cls");
-    cout<<"   MAIN MENU   "<<endl;
+    cout<<">>>MAIN MENU<<<"<<endl;
     cout<<"1. Register"<<endl;
     cout<<"2. Login"<<endl;
     cout<<"3. Exit"<<endl;
@@ -16,7 +16,7 @@ char FinancialControl::chooseOptionFromMainMenu(){
 char FinancialControl::chooseOptionFromUserMenu(){
     char choice;
     system("cls");
-    cout<<"   USER MENU   "<<endl;
+    cout<<">>>USER MENU<<<"<<endl;
     cout<<"1. Add income"<<endl;
     cout<<"2. Add expense"<<endl;
     cout<<"3. Balance from current month"<<endl;
