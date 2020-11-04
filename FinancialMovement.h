@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
+#include "AccesoryFunctions.h"
 using namespace std;
 
 class FinancialMovement{
@@ -21,6 +22,7 @@ public:
     void setItem(string newItem);
     void setAmount(double newAmount);
     void showAllDataOfFinancialMovement();
+    void typeDateItemAmountForFinancialMovement();
 };
 
 #endif // FINANCIALMOVEMENT_H
