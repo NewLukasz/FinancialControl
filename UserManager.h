@@ -23,6 +23,7 @@ public:
     };
     void userRegister();
     int loginUser();
+    int logout();
 };
 
 #endif // USERMANAGER_H

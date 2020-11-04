@@ -76,3 +76,8 @@ bool UserManager::checkLoginExists(string loginForCheck){
     }
     return false;
 }
+
+int UserManager::logout(){
+    idLoggedInUser=0;
+    return 0;
+}
