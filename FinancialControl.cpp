@@ -46,3 +46,7 @@ int FinancialControl::loginUser(){
 int FinancialControl::logout(){
     return userManager.logout();
 }
+
+void FinancialControl::addIncome(){
+    financialManager->addIncome();
+}

@@ -16,7 +16,7 @@ double FinancialMovement::getAmount(){
     return amount;
 }
 
-void FinancialMovement::setUsetId(int newUserId){
+void FinancialMovement::setUserId(int newUserId){
     userId=newUserId;
 }
 
@@ -30,4 +30,12 @@ void FinancialMovement::setItem(string newItem){
 
 void FinancialMovement::setAmount(double newAmount){
     amount=newAmount;
+}
+
+void FinancialMovement::showAllDataOfFinancialMovement(){
+    cout<<"UserId: "<<userId<<endl;
+    cout<<"Date: "<<date<<endl;
+    cout<<"Item: "<<item<<endl;
+    cout<<"Amount: "<<amount<<endl;
+    system("pause");
 }

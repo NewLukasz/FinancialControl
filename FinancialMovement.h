@@ -2,6 +2,7 @@
 #define FINANCIALMOVEMENT_H
 
 #include <iostream>
+#include <cstdlib>
 #include <time.h>
 using namespace std;
 
@@ -15,10 +16,11 @@ public:
     time_t getDate();
     string getItem();
     double getAmount();
-    void setUsetId(int newUserId);
+    void setUserId(int newUserId);
     void setDate(time_t newDate);
     void setItem(string newItem);
     void setAmount(double newAmount);
+    void showAllDataOfFinancialMovement();
 };
 
 #endif // FINANCIALMOVEMENT_H

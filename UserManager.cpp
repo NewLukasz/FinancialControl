@@ -89,3 +89,7 @@ bool UserManager::checkIfUserIsLogin(){
         return 1;
     }
 }
+
+int UserManager::getIdLoggedInUser(){
+    return idLoggedInUser;
+}

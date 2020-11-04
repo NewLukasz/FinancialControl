@@ -25,6 +25,7 @@ public:
     void userRegister();
     int loginUser();
     int logout();
+    void addIncome();
 };
 
 #endif // FINANCIALCONTROL_H
