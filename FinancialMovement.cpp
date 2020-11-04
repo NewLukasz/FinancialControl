@@ -56,9 +56,7 @@ void FinancialMovement::typeDateItemAmountForFinancialMovement() {
         }
         date=DateAccesoryFunctions::convertStringDataToTimeT(stringDate);
     } else if(choice=='y') {
-        cout<<"Here insert function with get today date"<<endl;
-        date=1000;
-        system("pause");
+        date=DateAccesoryFunctions::getTodayDate();
     }
     cout<<"Type source/destination of financial movement: ";
     item=AccesoryFunctions::getLine();
