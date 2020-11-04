@@ -30,6 +30,7 @@ int main() {
             switch(choice) {
             case '1':
                 cout<<"Adding and income..."<<endl;
+                financialControl.addIncome();
                 break;
             case '2':
                 cout<<"Adding and expense..."<<endl;

@@ -16,7 +16,7 @@ double FinancialMovement::getAmount(){
     return amount;
 }
 
-void FinancialMovement::setUsetId(int newUserId){
+void FinancialMovement::setUserId(int newUserId){
     userId=newUserId;
 }
 
@@ -30,4 +30,34 @@ void FinancialMovement::setItem(string newItem){
 
 void FinancialMovement::setAmount(double newAmount){
     amount=newAmount;
+}
+
+void FinancialMovement::showAllDataOfFinancialMovement(){
+    cout<<"UserId: "<<userId<<endl;
+    cout<<"Date: "<<date<<endl;
+    cout<<"Item: "<<item<<endl;
+    cout<<"Amount: "<<amount<<endl;
+    system("pause");
+}
+
+void FinancialMovement::typeDateItemAmountForFinancialMovement(){
+    cout<<"Is financial movement should be added with today date? (y/n)"<<endl;
+    char choice=AccesoryFunctions::getChar();
+    while(choice!='n'&&choice!='y'){
+        cout<<"Option: "<<choice<<" doesn't exist. Choose beetween y/n: ";
+        choice=AccesoryFunctions::getChar();
+    }
+    if(choice=='n'){
+        cout<<"Here insert function to insert date in correct format"<<endl;
+        date=500;
+        system("pause");
+    }else if(choice=='y'){
+        cout<<"Here insert function with get today date"<<endl;
+        date=1000;
+        system("pause");
+    }
+    cout<<"Type source/destination of financial movement: ";
+    item=AccesoryFunctions::getLine();
+    cout<<"Type amount: ";
+    cin>>amount;
 }
