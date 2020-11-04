@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <time.h>
 #include "AccesoryFunctions.h"
+#include "DateAccesoryFunctions.h"
 using namespace std;
 
 class FinancialMovement{

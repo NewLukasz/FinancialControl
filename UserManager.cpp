@@ -43,6 +43,7 @@ User UserManager::typeUserData() {
 int UserManager::loginUser() {
     string login="", password="";
     system("cls");
+    cout<<">>>Login<<<"<<endl;
     cout<<"Login: ";
     login=AccesoryFunctions::getLine();
     for(int i=0; i<users.size(); i++) {
