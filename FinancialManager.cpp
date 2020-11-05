@@ -3,7 +3,11 @@
 void FinancialManager::addIncome(){
     Income income;
     income.typeDateItemAmountForFinancialMovement();
-    income.setIncomeId(1);
+
+    income.setIncomeId(nextIncomeId());
+
+    int a=nextIncomeId();
+
     income.setUserId(LOGGED_IN_USER);
     income.showAllDataOfFinancialMovement();
 
@@ -11,4 +15,12 @@ void FinancialManager::addIncome(){
     xmlWithIncomes.addIncomeToXMLFile(income);
 
     incomes.push_back(income);
+}
+
+int FinancialManager::nextIncomeId(){
+    if(incomes.size()==0){
+        return 1;
+    }else{
+        return incomes.back().getIncomeId()+1;
+    }
 }

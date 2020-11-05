@@ -1,8 +1,16 @@
 #include "XMLFinancialFile.h"
 
+string chooseFileNameBasedOnDecisionVariable(bool decisionVariableOneIfIncomeZeroIfExpense){
+    if(decisionVariableOneIfIncomeZeroIfExpense=1){
+        return "incomes.xml";
+    } else{
+        return "expenses.xml";
+    }
+}
+
 void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMovement,int idOfFinancialMovement,bool decisionVariableOneIfIncomeZeroIfExpense) {
     CMarkup xml;
-    bool fileExists= xml.Load("FinancialMovement.xml");
+    bool fileExists= xml.Load(chooseFileNameBasedOnDecisionVariable(decisionVariableOneIfIncomeZeroIfExpense));
     if(!fileExists) {
         xml.SetDoc("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
         xml.AddElem("FinancialMovements");
@@ -24,5 +32,5 @@ void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMov
     xml.AddElem("Date",financialMovement.getDate());
     xml.AddElem("Item",financialMovement.getItem());
     xml.AddElem("Amount",financialMovement.getAmount());
-    xml.Save("FinancialMovement.xml");
+    xml.Save(chooseFileNameBasedOnDecisionVariable(decisionVariableOneIfIncomeZeroIfExpense));
 }

@@ -13,6 +13,7 @@ class FinancialManager {
     const int LOGGED_IN_USER;
     vector <Income> incomes;
     vector <Expense> expenses;
+    int nextIncomeId();
 public:
     FinancialManager(string nameForFileWithIncomes, string nameForFileWithExpenses, int loggedInUser) : LOGGED_IN_USER(loggedInUser) {};
     void addIncome();
