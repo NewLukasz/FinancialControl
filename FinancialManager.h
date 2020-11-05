@@ -14,6 +14,7 @@ class FinancialManager {
     vector <Income> incomes;
     vector <Expense> expenses;
     int nextIncomeId();
+    int nextExpenseId();
 public:
     FinancialManager(int loggedInUser) : LOGGED_IN_USER(loggedInUser) {
     XMLFileWithIncomes xmlFileWithIncomes;

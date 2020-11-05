@@ -26,6 +26,7 @@ public:
     int loginUser();
     int logout();
     void addIncome();
+    void addExpense();
 };
 
 #endif // FINANCIALCONTROL_H

@@ -26,6 +26,8 @@ void FinancialManager::addExpense(){
     expense.setExpenseId(nextExpenseId());
     expense.setUserId(LOGGED_IN_USER);
 
+    expense.showAllDataOfFinancialMovement();
+
     expenses.push_back(expense);
 
 }

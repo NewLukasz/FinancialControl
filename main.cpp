@@ -34,7 +34,9 @@ int main() {
                 financialControl.addIncome();
                 break;
             case '2':
-                cout<<"Adding and expense..."<<endl;
+                system("cls");
+                cout<<">>>Adding an expense<<<"<<endl;
+                financialControl.addExpense();
                 break;
             case '3':
                 cout<<"Show balance..."<<endl;
