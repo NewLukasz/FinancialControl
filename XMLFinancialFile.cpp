@@ -1,7 +1,7 @@
 #include "XMLFinancialFile.h"
 
 string XMLFinancialFile::chooseFileNameBasedOnDecisionVariable(bool decisionVariableOneIfIncomeZeroIfExpense) {
-    if(decisionVariableOneIfIncomeZeroIfExpense=1) {
+    if(decisionVariableOneIfIncomeZeroIfExpense==1) {
         return "incomes.xml";
     } else {
         return "expenses.xml";

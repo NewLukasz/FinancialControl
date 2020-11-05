@@ -62,6 +62,8 @@ void FinancialMovement::typeDateItemAmountForFinancialMovement(){
     setItem(item=AccesoryFunctions::getLine());
     cout<<"Type amount: ";
     setAmount(insertAmount());
+    cout<<endl<<"Financial movement has been added"<<endl;
+    system("pause");
 }
 
 bool FinancialMovement::checkIfAmountInStringContainLetter(string amountInString){

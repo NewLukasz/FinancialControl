@@ -6,6 +6,7 @@
 #include "Income.h"
 #include "Expense.h"
 #include "DateAccesoryFunctions.h"
+#include "XMLFileWithExpenses.h"
 #include "XMLFileWithIncomes.h"
 using namespace std;
 
