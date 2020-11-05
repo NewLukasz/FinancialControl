@@ -21,8 +21,8 @@ class FinancialManager {
 public:
     FinancialManager(int loggedInUser, string fileNameForFileWithIncomes, string fileNameForFileWithExpenses)
     : xmlFileWithIncomes(fileNameForFileWithIncomes), xmlfileWithExpenses(fileNameForFileWithExpenses), LOGGED_IN_USER(loggedInUser) {
-    incomes=xmlFileWithIncomes.loadIncomesFromXMLFile(LOGGED_IN_USER);
-    expenses=xmlfileWithExpenses.loadExpensesFromXMLFile(LOGGED_IN_USER);
+    incomes=xmlFileWithIncomes.loadIncomesFromXMLFile(LOGGED_IN_USER, fileNameForFileWithIncomes);
+    expenses=xmlfileWithExpenses.loadExpensesFromXMLFile(LOGGED_IN_USER, fileNameForFileWithExpenses);
     };
     void addIncome();
     void addExpense();
