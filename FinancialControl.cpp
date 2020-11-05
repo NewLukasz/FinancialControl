@@ -38,7 +38,7 @@ void FinancialControl::userRegister(){
 int FinancialControl::loginUser(){
     int idLoggedInUser=userManager.loginUser();
     if(userManager.checkIfUserIsLogin()){
-        financialManager = new FinancialManager("incomes.xml","expences.xml",idLoggedInUser);
+        financialManager = new FinancialManager(idLoggedInUser);
     }
     return idLoggedInUser;
 }
