@@ -50,3 +50,7 @@ int FinancialControl::logout(){
 void FinancialControl::addIncome(){
     financialManager->addIncome();
 }
+
+void FinancialControl::addExpense(){
+    financialManager->addExpense();
+}
