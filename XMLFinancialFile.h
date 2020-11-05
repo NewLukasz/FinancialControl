@@ -11,7 +11,6 @@
 using namespace std;
 
 class XMLFinancialFile{
-    string chooseFileNameBasedOnDecisionVariable(bool decisionVariableOneIfIncomeZeroIfExpense);
 protected:
     void addFinancialMovementToFile(FinancialMovement financialMovement, int idOfFinancialMovement, bool decisionVariableOneIfIncomeZeroIfExpense, string fileName);
 public:
