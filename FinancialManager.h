@@ -20,6 +20,8 @@ public:
     FinancialManager(int loggedInUser) : LOGGED_IN_USER(loggedInUser) {
     XMLFileWithIncomes xmlFileWithIncomes;
     incomes=xmlFileWithIncomes.loadIncomesFromXMLFile();
+    XMLFileWithExpenses xmlfileWithExpenses;
+    expenses=xmlfileWithExpenses.loadExpensesFromXMLFile();
     };
     void addIncome();
     void addExpense();

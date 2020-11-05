@@ -37,7 +37,6 @@ void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMov
 
 
 vector <Income> XMLFinancialFile::loadIncomesFromXMLFile() {
-
     CMarkup xml;
     bool fileExists=xml.Load("incomes.xml");
 
@@ -68,4 +67,33 @@ vector <Income> XMLFinancialFile::loadIncomesFromXMLFile() {
     }
 }
 
-//vector <Expense> XMLFinancialFile::loadExpensesFromXMLFile();
+vector <Expense> XMLFinancialFile::loadExpensesFromXMLFile(){
+    CMarkup xml;
+    bool fileExists=xml.Load("expenses.xml");
+
+    vector <Expense> expenses;
+    Expense expense;
+
+    if(!fileExists){
+        return expenses;
+    }else{
+        xml.FindElem();
+        xml.IntoElem();
+        while(xml.FindElem("Expense")){
+            xml.IntoElem();
+            xml.FindElem("ExpenseId");
+            expense.setExpenseId(atoi(xml.GetData().c_str()));
+            xml.FindElem("UserId");
+            expense.setUserId(atoi(xml.GetData().c_str()));
+            xml.FindElem("Date");
+            expense.setDate(atoi(xml.GetData().c_str()));
+            xml.FindElem("Item");
+            expense.setItem(xml.GetData().c_str());
+            xml.FindElem("Amount");
+            expense.setAmount(atof(xml.GetData().c_str()));
+            xml.OutOfElem();
+            expenses.push_back(expense);
+        }
+        return expenses;
+    }
+}
