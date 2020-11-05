@@ -8,7 +8,7 @@ string XMLFinancialFile::chooseFileNameBasedOnDecisionVariable(bool decisionVari
     }
 }
 
-void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMovement,int idOfFinancialMovement,bool decisionVariableOneIfIncomeZeroIfExpense) {
+void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMovement,int idOfFinancialMovement,bool decisionVariableOneIfIncomeZeroIfExpense, string fileName) {
     CMarkup xml;
     bool fileExists= xml.Load(chooseFileNameBasedOnDecisionVariable(decisionVariableOneIfIncomeZeroIfExpense));
     if(!fileExists) {
@@ -32,11 +32,11 @@ void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMov
     xml.AddElem("Date",financialMovement.getDate());
     xml.AddElem("Item",financialMovement.getItem());
     xml.AddElem("Amount",financialMovement.getAmount());
-    xml.Save(chooseFileNameBasedOnDecisionVariable(decisionVariableOneIfIncomeZeroIfExpense));
+    xml.Save(fileName);
 }
 
 
-vector <Income> XMLFinancialFile::loadIncomesFromXMLFile() {
+vector <Income> XMLFinancialFile::loadIncomesFromXMLFile(int loggedInUserId) {
     CMarkup xml;
     bool fileExists=xml.Load("incomes.xml");
 
@@ -61,13 +61,17 @@ vector <Income> XMLFinancialFile::loadIncomesFromXMLFile() {
             xml.FindElem("Amount");
             income.setAmount(atof(xml.GetData().c_str()));
             xml.OutOfElem();
-            incomes.push_back(income);
+            if(income.getUserId()==loggedInUserId){
+                incomes.push_back(income);
+            }else{
+                continue;
+            }
         }
         return incomes;
     }
 }
 
-vector <Expense> XMLFinancialFile::loadExpensesFromXMLFile(){
+vector <Expense> XMLFinancialFile::loadExpensesFromXMLFile(int loggedInUserId){
     CMarkup xml;
     bool fileExists=xml.Load("expenses.xml");
 

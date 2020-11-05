@@ -6,8 +6,7 @@ void FinancialManager::addIncome(){
     income.setIncomeId(nextIncomeId());
     income.setUserId(LOGGED_IN_USER);
 
-    XMLFileWithIncomes xmlWithIncomes;
-    xmlWithIncomes.addIncomeToXMLFile(income);
+    xmlFileWithIncomes.addIncomeToXMLFile(income);
 
     incomes.push_back(income);
 }
@@ -26,8 +25,7 @@ void FinancialManager::addExpense(){
     expense.setExpenseId(nextExpenseId());
     expense.setUserId(LOGGED_IN_USER);
 
-    XMLFileWithExpenses xmlFileWithExpenses;
-    xmlFileWithExpenses.addExpensesToXMLFile(expense);
+    xmlfileWithExpenses.addExpensesToXMLFile(expense);
 
     expenses.push_back(expense);
 

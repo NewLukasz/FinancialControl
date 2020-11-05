@@ -16,12 +16,13 @@ class FinancialManager {
     vector <Expense> expenses;
     int nextIncomeId();
     int nextExpenseId();
-public:
-    FinancialManager(int loggedInUser) : LOGGED_IN_USER(loggedInUser) {
     XMLFileWithIncomes xmlFileWithIncomes;
-    incomes=xmlFileWithIncomes.loadIncomesFromXMLFile();
     XMLFileWithExpenses xmlfileWithExpenses;
-    expenses=xmlfileWithExpenses.loadExpensesFromXMLFile();
+public:
+    FinancialManager(int loggedInUser, string fileNameForFileWithIncomes, string fileNameForFileWithExpenses)
+    : xmlFileWithIncomes(fileNameForFileWithIncomes), xmlfileWithExpenses(fileNameForFileWithExpenses), LOGGED_IN_USER(loggedInUser) {
+    incomes=xmlFileWithIncomes.loadIncomesFromXMLFile(LOGGED_IN_USER);
+    expenses=xmlfileWithExpenses.loadExpensesFromXMLFile(LOGGED_IN_USER);
     };
     void addIncome();
     void addExpense();

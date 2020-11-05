@@ -6,7 +6,11 @@
 #include "XMLFinancialFile.h"
 
 class XMLFileWithExpenses : public XMLFinancialFile{
+    string fileNameForFileWithExpenses;
 public:
+    XMLFileWithExpenses(string sendedFileNameForFileWithExpenses){
+        fileNameForFileWithExpenses=sendedFileNameForFileWithExpenses;
+    };
     void addExpensesToXMLFile(Expense expense);
 };
 
