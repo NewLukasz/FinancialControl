@@ -40,8 +40,8 @@ void FinancialMovement::showAllDataOfFinancialMovement() {
     system("pause");
 }
 
-void FinancialMovement::typeDateItemAmountForFinancialMovement(){
-    cout<<"Is financial movement should be added with today date? (y/n)";
+void FinancialMovement::typeDateItemAmountForFinancialMovement() {
+    cout<<"Is financial movement should be added with today date? (y/n) ";
     char choice=AccesoryFunctions::getChar();
     while(choice!='n'&&choice!='y') {
         cout<<"Option: "<<choice<<" doesn't exist. Choose beetween y/n: ";
@@ -66,10 +66,10 @@ void FinancialMovement::typeDateItemAmountForFinancialMovement(){
     system("pause");
 }
 
-bool FinancialMovement::checkIfAmountInStringContainLetter(string amountInString){
+bool FinancialMovement::checkIfAmountInStringContainLetter(string amountInString) {
     for(int i=0; i<amountInString.length(); i++) {
         if(isdigit(amountInString[i])==0) {
-            if(amountInString[i]==','||amountInString[i]=='.'){
+            if(amountInString[i]==','||amountInString[i]=='.') {
                 continue;
             } else {
                 return true;
@@ -79,17 +79,40 @@ bool FinancialMovement::checkIfAmountInStringContainLetter(string amountInString
     return false;
 }
 
-double FinancialMovement::insertAmount(){
-    string amountInString=AccesoryFunctions::getLine();
-    while(checkIfAmountInStringContainLetter(amountInString)) {
-        cout<<"You typed wrong sings. Try again: ";
-        amountInString=AccesoryFunctions::getLine();
+bool FinancialMovement::checkIfAmountContainsMoreThanTwoDigitAfterComa(string amountInString) {
+    int positionOfComaInString=0;
+    for(int i=0; i<amountInString.length(); i++) {
+        if(amountInString[i]=='.'||amountInString[i]==',') {
+            positionOfComaInString=i;
+            break;
+        }
     }
+    int const VALUE_OF_DISPLACEMENT_TO_DELETE_CORRECT_PART_OF_STRING_TO_MAKE_DETECTION=1;
+    string signsAfterComa=amountInString.erase(0,positionOfComaInString+VALUE_OF_DISPLACEMENT_TO_DELETE_CORRECT_PART_OF_STRING_TO_MAKE_DETECTION);
+    if(signsAfterComa.length()==2||signsAfterComa.length()==1||signsAfterComa.length()==0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+string FinancialMovement::changeCommaToDotInAmountString(string amountInString){
     for(int i=0; i<amountInString.length(); i++) {
         if(amountInString[i]==',') {
             amountInString[i]='.';
         }
     }
-    double amount=atof(amountInString.c_str());
+    return amountInString;
+}
+
+double FinancialMovement::insertAmount() {
+    string amountInString=AccesoryFunctions::getLine();
+    string amountInStringWithDot=changeCommaToDotInAmountString(amountInString);
+    while(checkIfAmountInStringContainLetter(amountInStringWithDot)||checkIfAmountContainsMoreThanTwoDigitAfterComa(amountInStringWithDot)){
+        cout<<"You typed wrong sings. Try again: ";
+        amountInString=AccesoryFunctions::getLine();
+        amountInStringWithDot=changeCommaToDotInAmountString(amountInString);
+    }
+    double amount=atof(amountInStringWithDot.c_str());
     return amount;
 }

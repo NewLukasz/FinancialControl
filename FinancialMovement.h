@@ -15,6 +15,8 @@ class FinancialMovement{
     double amount;
     double insertAmount();
     bool checkIfAmountInStringContainLetter(string amountInString);
+    bool checkIfAmountContainsMoreThanTwoDigitAfterComa(string amountInString);
+    string changeCommaToDotInAmountString(string amountInString);
 public:
     int getUserId();
     time_t getDate();
