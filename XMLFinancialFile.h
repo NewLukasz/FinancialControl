@@ -11,12 +11,11 @@
 using namespace std;
 
 class XMLFinancialFile{
-    string chooseFileNameBasedOnDecisionVariable(bool decisionVariableOneIfIncomeZeroIfExpense);
 protected:
-    void addFinancialMovementToFile(FinancialMovement financialMovement, int idOfFinancialMovement, bool decisionVariableOneIfIncomeZeroIfExpense);
+    void addFinancialMovementToFile(FinancialMovement financialMovement, int idOfFinancialMovement, bool decisionVariableOneIfIncomeZeroIfExpense, string fileName);
 public:
-    vector <Income> loadIncomesFromXMLFile();
-    vector <Expense> loadExpensesFromXMLFile();
+    vector <Income> loadIncomesFromXMLFile(int loggedInUserId, string fileName);
+    vector <Expense> loadExpensesFromXMLFile(int loggedInUserId, string fileName);
 };
 
 #endif // XMLFINANCIALFILE_H

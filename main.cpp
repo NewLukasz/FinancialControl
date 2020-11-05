@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    FinancialControl financialControl("users.xml");
+    FinancialControl financialControl("users.xml","incomes.xml","expenses.xml");
     int idLoggedInUser=0;
     char choice;
 
