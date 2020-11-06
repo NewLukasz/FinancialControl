@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Markup.h"
 #include "FinancialMovement.h"
 #include "Income.h"
 #include "Expense.h"
+#include "AccesoryFunctions.h"
 
 using namespace std;
 
