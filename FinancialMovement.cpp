@@ -113,6 +113,5 @@ double FinancialMovement::insertAmount() {
         amountInString=AccesoryFunctions::getLine();
         amountInStringWithDot=changeCommaToDotInAmountString(amountInString);
     }
-    double amount=atof(amountInStringWithDot.c_str());
-    return amount;
+    return atof(amountInStringWithDot.c_str());
 }

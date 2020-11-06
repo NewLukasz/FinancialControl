@@ -23,7 +23,7 @@ void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMov
     xml.AddElem("UserId",financialMovement.getUserId());
     xml.AddElem("Date",financialMovement.getDate());
     xml.AddElem("Item",financialMovement.getItem());
-    xml.AddElem("Amount",financialMovement.getAmount());
+    xml.AddElem("Amount",AccesoryFunctions::convertDoubleToString(financialMovement.getAmount()));
     xml.Save(fileName);
 }
 

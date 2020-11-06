@@ -21,3 +21,9 @@ string AccesoryFunctions::getLine() {
     getline(cin, dataInsert);
     return dataInsert;
 }
+
+string AccesoryFunctions::convertDoubleToString(double doubleToConvert) {
+    ostringstream streamObj;
+    streamObj<<doubleToConvert;
+    return streamObj.str();
+}
