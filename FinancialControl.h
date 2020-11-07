@@ -32,6 +32,7 @@ public:
     void addExpense();
     void showBalanceFromCurrentMonth();
     void showBalanceFromPreviousMonth();
+    void showBalanceFromCustomPeriodOfTime();
 };
 
 #endif // FINANCIALCONTROL_H
