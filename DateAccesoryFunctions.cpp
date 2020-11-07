@@ -213,3 +213,11 @@ bool DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(time_t dateFor
     }
 }
 
+bool DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(time_t firstLimit, time_t secondLimit, time_t dateForCheck){
+    if(dateForCheck>firstLimit&&dateForCheck<secondLimit){
+        return true;
+    }else{
+        return false;
+    }
+}
+

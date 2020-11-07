@@ -19,7 +19,7 @@ class FinancialManager {
     XMLFileWithIncomes xmlFileWithIncomes;
     XMLFileWithExpenses xmlfileWithExpenses;
     void showSummary(int incomesSummary, int expensesSummary);
-
+    time_t getLimitDate();
 public:
     FinancialManager(int loggedInUser, string fileNameForFileWithIncomes, string fileNameForFileWithExpenses)
     : xmlFileWithIncomes(fileNameForFileWithIncomes), xmlfileWithExpenses(fileNameForFileWithExpenses), LOGGED_IN_USER(loggedInUser) {
@@ -30,6 +30,7 @@ public:
     void addExpense();
     void showBalanceFromCurrentMonth();
     void showBalanceFromPreviousMonth();
+    void showBalanceFromCustomPeriodOfTime();
     void showIncomeDetails(Income income);
     void showExpenseDetails(Expense expense);
 

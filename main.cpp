@@ -49,7 +49,9 @@ int main() {
                 financialControl.showBalanceFromPreviousMonth();
                 break;
             case '5':
-                cout<<"Show balance..."<<endl;
+                system("cls");
+                cout<<">>>Balance from custom period of time<<<"<<endl;
+                financialControl.showBalanceFromCustomPeriodOfTime();
                 break;
             case '6':
                 cout<<"Change password..."<<endl;

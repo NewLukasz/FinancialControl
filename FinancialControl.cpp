@@ -62,3 +62,7 @@ void FinancialControl::showBalanceFromCurrentMonth(){
 void FinancialControl::showBalanceFromPreviousMonth(){
     financialManager->showBalanceFromPreviousMonth();
 }
+
+void FinancialControl::showBalanceFromCustomPeriodOfTime(){
+    financialManager->showBalanceFromCustomPeriodOfTime();
+}

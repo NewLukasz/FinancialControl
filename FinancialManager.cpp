@@ -39,7 +39,7 @@ int FinancialManager::nextExpenseId() {
     }
 }
 
-void FinancialManager::showSummary(int incomesSummary,int expensesSummary){
+void FinancialManager::showSummary(int incomesSummary,int expensesSummary) {
     cout<<"_______________________________________"<<endl;
     cout<<endl<<">>>Summary<<<"<<endl;
     cout<<"Income: "<<incomesSummary<<endl;
@@ -60,8 +60,8 @@ void FinancialManager::showBalanceFromCurrentMonth() {
     cout<<"_______________________________________"<<endl;
     cout<<endl<<"Expenses below: "<<endl;
     int expensesSummary=0;
-    for(int i=0;i<expenses.size();i++){
-        if(DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(expenses[i].getDate())){
+    for(int i=0; i<expenses.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(expenses[i].getDate())) {
             cout<<"_____"<<endl;
             showExpenseDetails(expenses[i]);
             expensesSummary+=expenses[i].getAmount();
@@ -71,7 +71,7 @@ void FinancialManager::showBalanceFromCurrentMonth() {
     system("pause");
 }
 
-void FinancialManager::showBalanceFromPreviousMonth(){
+void FinancialManager::showBalanceFromPreviousMonth() {
     cout<<endl<<"Incomes below: "<<endl;
     int incomesSummary=0;
     for(int i=0; i<incomes.size(); i++) {
@@ -84,8 +84,8 @@ void FinancialManager::showBalanceFromPreviousMonth(){
     cout<<"_______________________________________"<<endl;
     cout<<endl<<"Expenses below: "<<endl;
     int expensesSummary=0;
-    for(int i=0;i<expenses.size();i++){
-        if(DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(expenses[i].getDate())){
+    for(int i=0; i<expenses.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(expenses[i].getDate())) {
             cout<<"_____"<<endl;
             showExpenseDetails(expenses[i]);
             expensesSummary+=expenses[i].getAmount();
@@ -95,13 +95,61 @@ void FinancialManager::showBalanceFromPreviousMonth(){
     system("pause");
 }
 
+time_t FinancialManager::getLimitDate() {
+
+    string stringLimitDate=AccesoryFunctions::getLine();
+    while(DateAccesoryFunctions::checkDate(stringLimitDate)==false) {
+        cout<<"Insert limit date again (format yyyy-mm-dd): ";
+        stringLimitDate=AccesoryFunctions::getLine();
+    }
+
+    return DateAccesoryFunctions::convertStringDataToTimeT(stringLimitDate);
+}
+
+void FinancialManager::showBalanceFromCustomPeriodOfTime() {
+    time_t firstLimit, secondLimit;
+
+    do {
+        cout<<"Insert first limit date (format: yyyy-mm-dd with dashes): ";
+        firstLimit=getLimitDate();
+        cout<<"Insert second limit date (format: yyyy-mm-dd with dashes): ";
+        secondLimit=getLimitDate();
+        if(firstLimit>secondLimit){
+            cout<<"First limit date is greater than second. It is not possible to show balance. Type dates again."<<endl;
+        }
+    }while(firstLimit>secondLimit);
+
+    cout<<endl<<"Incomes below: "<<endl;
+    int incomesSummary=0;
+    for(int i=0; i<incomes.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(firstLimit,secondLimit,incomes[i].getDate())) {
+            cout<<"_____"<<endl;
+            showIncomeDetails(incomes[i]);
+            incomesSummary+=incomes[i].getAmount();
+        }
+    }
+    cout<<"_______________________________________"<<endl;
+    cout<<endl<<"Expenses below: "<<endl;
+    int expensesSummary=0;
+    for(int i=0; i<expenses.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(firstLimit,secondLimit,expenses[i].getDate())) {
+            cout<<"_____"<<endl;
+            showExpenseDetails(expenses[i]);
+            expensesSummary+=expenses[i].getAmount();
+        }
+    }
+    showSummary(incomesSummary,expensesSummary);
+    cout<<"Summary is beetwen: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(firstLimit)<<" and "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(secondLimit)<<"."<<endl<<endl;
+    system("pause");
+}
+
 void FinancialManager::showIncomeDetails(Income income) {
     cout<<"Date: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(income.getDate())<<endl;
     cout<<"Source of income: "<<income.getItem()<<endl;
     cout<<"Amount: "<<income.getAmount()<<endl;
 }
 
-void FinancialManager::showExpenseDetails(Expense expense){
+void FinancialManager::showExpenseDetails(Expense expense) {
     cout<<"Date: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(expense.getDate())<<endl;
     cout<<"Reason of expense: "<<expense.getItem()<<endl;
     cout<<"Amount: "<<expense.getAmount()<<endl;
