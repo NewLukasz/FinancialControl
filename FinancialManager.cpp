@@ -3,7 +3,7 @@
 void FinancialManager::addIncome(){
     Income income;
     income.typeDateItemAmountForFinancialMovement();
-    income.setIncomeId(nextIncomeId());
+    income.setIncomeId(xmlFileWithIncomes.getLastIncomeIdFromXMLFile());
     income.setUserId(LOGGED_IN_USER);
 
     xmlFileWithIncomes.addIncomeToXMLFile(income);

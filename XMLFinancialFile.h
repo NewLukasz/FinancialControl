@@ -18,6 +18,7 @@ protected:
 public:
     vector <Income> loadIncomesFromXMLFile(int loggedInUserId, string fileName);
     vector <Expense> loadExpensesFromXMLFile(int loggedInUserId, string fileName);
+    int getLastFinancialMovementIdFromXMLFile(string fileName, bool decisionVariableOneIfIncomeZeroIfExpense);
 };
 
 #endif // XMLFINANCIALFILE_H
