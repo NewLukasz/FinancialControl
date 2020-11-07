@@ -67,6 +67,11 @@ void FinancialManager::showBalanceFromCurrentMonth() {
     system("pause");
 }
 
+void FinancialManager::showBalanceFromPreviousMonth(){
+    cout<<"Hello there!"<<endl;
+    system("pause");
+}
+
 void FinancialManager::showIncomeDetails(Income income) {
     cout<<"Date: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(income.getDate())<<endl;
     cout<<"Source of income: "<<income.getItem()<<endl;

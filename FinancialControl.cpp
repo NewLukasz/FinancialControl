@@ -58,3 +58,7 @@ void FinancialControl::addExpense(){
 void FinancialControl::showBalanceFromCurrentMonth(){
     financialManager->showBalanceFromCurrentMonth();
 }
+
+void FinancialControl::showBalanceFromPreviousMonth(){
+    financialManager->showBalanceFromPreviousMonth();
+}
