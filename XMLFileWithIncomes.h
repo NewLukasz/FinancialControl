@@ -12,6 +12,7 @@ public:
     fileNameForFileWithIncomes=sendedFileNameForFileWithIncomes;
     };
     void addIncomeToXMLFile(Income income);
+    int getLastIncomeIdFromXMLFile();
 };
 
 #endif // XMLFILEWITHINCOMES_H

@@ -3,7 +3,7 @@
 void FinancialManager::addIncome(){
     Income income;
     income.typeDateItemAmountForFinancialMovement();
-    income.setIncomeId(nextIncomeId());
+    income.setIncomeId(xmlFileWithIncomes.getLastIncomeIdFromXMLFile());
     income.setUserId(LOGGED_IN_USER);
 
     xmlFileWithIncomes.addIncomeToXMLFile(income);
@@ -22,7 +22,7 @@ int FinancialManager::nextIncomeId(){
 void FinancialManager::addExpense(){
     Expense expense;
     expense.typeDateItemAmountForFinancialMovement();
-    expense.setExpenseId(nextExpenseId());
+    expense.setExpenseId(xmlfileWithExpenses.getLastExpenseIdFromXMLFile());
     expense.setUserId(LOGGED_IN_USER);
 
     xmlfileWithExpenses.addExpensesToXMLFile(expense);
