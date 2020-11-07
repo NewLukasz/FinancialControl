@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstdio>
 #include "Markup.h"
 #include "User.h"
 using namespace std;
@@ -14,6 +15,7 @@ public:
     void addUserToFile(User user);
     vector <User> loadUsersFromFile();
     int getLastUserId();
+    void deleteFileWithUsers();
 };
 
 #endif

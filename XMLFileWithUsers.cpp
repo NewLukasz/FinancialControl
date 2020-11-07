@@ -19,6 +19,10 @@ void XMLFileWithUsers::addUserToFile(User user) {
     xml.Save(fileNameForFileWithUsers);
 }
 
+void XMLFileWithUsers::deleteFileWithUsers(){
+    remove(fileNameForFileWithUsers.c_str());
+}
+
 vector <User> XMLFileWithUsers::loadUsersFromFile(){
     vector <User> users;
     User user;

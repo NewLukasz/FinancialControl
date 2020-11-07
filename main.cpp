@@ -54,7 +54,9 @@ int main() {
                 financialControl.showBalanceFromCustomPeriodOfTime();
                 break;
             case '6':
-                cout<<"Change password..."<<endl;
+                system("cls");
+                cout<<">>>Change password<<<"<<endl;
+                financialControl.changeUserPassword();
                 break;
             case '9':
                 idLoggedInUser=financialControl.logout();

@@ -8,6 +8,23 @@ void UserManager::userRegister() {
     system("pause");
 }
 
+void UserManager::changeUserPassword(){
+    cout<<"Type new password: "<<endl;
+    string newPassword;
+    newPassword=AccesoryFunctions::getLine();
+    for(int i=0;i<users.size();i++){
+        if(users[i].getId()==idLoggedInUser){
+            users[i].setPassword(newPassword);
+        }
+    }
+    xmlFileWithUsers.deleteFileWithUsers();
+    for(int i=0;i<users.size();i++){
+        xmlFileWithUsers.addUserToFile(users[i]);
+    }
+    cout<<endl<<"Password was successfully changed."<<endl;
+    system("pause");
+}
+
 User UserManager::typeUserData() {
     system("cls");
     User user;
