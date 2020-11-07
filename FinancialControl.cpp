@@ -35,6 +35,10 @@ void FinancialControl::userRegister(){
     userManager.userRegister();
 }
 
+void FinancialControl::changeUserPassword(){
+    userManager.changeUserPassword();
+}
+
 int FinancialControl::loginUser(){
     int idLoggedInUser=userManager.loginUser();
     if(userManager.checkIfUserIsLogin()){

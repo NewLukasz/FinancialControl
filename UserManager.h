@@ -22,6 +22,7 @@ public:
         users=xmlFileWithUsers.loadUsersFromFile();
     };
     void userRegister();
+    void changeUserPassword();
     int loginUser();
     int logout();
     bool checkIfUserIsLogin();

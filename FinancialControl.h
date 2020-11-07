@@ -26,6 +26,7 @@ public:
     char chooseOptionFromMainMenu();
     char chooseOptionFromUserMenu();
     void userRegister();
+    void changeUserPassword();
     int loginUser();
     int logout();
     void addIncome();
