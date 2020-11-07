@@ -29,6 +29,7 @@ public:
     void addExpense();
     void showBalanceFromCurrentMonth();
     void showIncomeDetails(Income income);
+    void showExpenseDetails(Expense expense);
 };
 
 #endif // FINANCIALMANAGER_H
