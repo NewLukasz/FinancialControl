@@ -30,6 +30,7 @@ public:
     int logout();
     void addIncome();
     void addExpense();
+    void showBalanceFromCurrentMonth();
 };
 
 #endif // FINANCIALCONTROL_H

@@ -39,7 +39,9 @@ int main() {
                 financialControl.addExpense();
                 break;
             case '3':
-                cout<<"Show balance..."<<endl;
+                system("cls");
+                cout<<">>>Balance from current month<<"<<endl;
+                financialControl.showBalanceFromCurrentMonth();
                 break;
             case '4':
                 cout<<"Show balance..."<<endl;

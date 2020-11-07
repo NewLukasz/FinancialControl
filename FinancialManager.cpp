@@ -1,6 +1,6 @@
 #include "FinancialManager.h"
 
-void FinancialManager::addIncome(){
+void FinancialManager::addIncome() {
     Income income;
     income.typeDateItemAmountForFinancialMovement();
     income.setIncomeId(xmlFileWithIncomes.getLastIncomeIdFromXMLFile());
@@ -11,15 +11,15 @@ void FinancialManager::addIncome(){
     incomes.push_back(income);
 }
 
-int FinancialManager::nextIncomeId(){
-    if(incomes.size()==0){
+int FinancialManager::nextIncomeId() {
+    if(incomes.size()==0) {
         return 1;
-    }else{
+    } else {
         return incomes.back().getIncomeId()+1;
     }
 }
 
-void FinancialManager::addExpense(){
+void FinancialManager::addExpense() {
     Expense expense;
     expense.typeDateItemAmountForFinancialMovement();
     expense.setExpenseId(xmlfileWithExpenses.getLastExpenseIdFromXMLFile());
@@ -31,10 +31,24 @@ void FinancialManager::addExpense(){
 
 }
 
-int FinancialManager::nextExpenseId(){
-    if(expenses.size()==0){
+int FinancialManager::nextExpenseId() {
+    if(expenses.size()==0) {
         return 1;
-    }else{
+    } else {
         return expenses.back().getExpenseId()+1;
     }
+}
+
+void FinancialManager::showBalanceFromCurrentMonth() {
+    for(int i=0; i<incomes.size(); i++) {
+        cout<<"------------------------------"<<endl;
+        showIncomeDetails(incomes[i]);
+    }
+    system("pause");
+}
+
+void FinancialManager::showIncomeDetails(Income income) {
+    cout<<"Date: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(income.getDate())<<endl;
+    cout<<"Source of income: "<<income.getItem()<<endl;
+    cout<<"Amount: "<<income.getAmount()<<endl;
 }
