@@ -18,6 +18,7 @@ class FinancialManager {
     int nextExpenseId();
     XMLFileWithIncomes xmlFileWithIncomes;
     XMLFileWithExpenses xmlfileWithExpenses;
+
 public:
     FinancialManager(int loggedInUser, string fileNameForFileWithIncomes, string fileNameForFileWithExpenses)
     : xmlFileWithIncomes(fileNameForFileWithIncomes), xmlfileWithExpenses(fileNameForFileWithExpenses), LOGGED_IN_USER(loggedInUser) {
@@ -26,6 +27,9 @@ public:
     };
     void addIncome();
     void addExpense();
+    void showBalanceFromCurrentMonth();
+    void showIncomeDetails(Income income);
+    void showExpenseDetails(Expense expense);
 };
 
 #endif // FINANCIALMANAGER_H
