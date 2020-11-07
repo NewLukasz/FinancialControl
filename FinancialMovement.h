@@ -10,10 +10,10 @@ using namespace std;
 
 class FinancialMovement{
     int userId;
-    time_t date;
     string item;
     double amount;
     double insertAmount();
+    time_t date;
     bool checkIfAmountInStringContainLetter(string amountInString);
     bool checkIfAmountContainsMoreThanTwoDigitAfterComa(string amountInString);
     string changeCommaToDotInAmountString(string amountInString);

@@ -48,6 +48,7 @@ void FinancialManager::showSummary(int incomesSummary,int expensesSummary) {
 }
 
 void FinancialManager::showBalanceFromCurrentMonth() {
+    sortFinancialMovementsFromTheOldest();
     cout<<endl<<"Incomes below: "<<endl;
     int incomesSummary=0;
     for(int i=0; i<incomes.size(); i++) {
@@ -153,4 +154,12 @@ void FinancialManager::showExpenseDetails(Expense expense) {
     cout<<"Date: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(expense.getDate())<<endl;
     cout<<"Reason of expense: "<<expense.getItem()<<endl;
     cout<<"Amount: "<<expense.getAmount()<<endl;
+}
+
+bool FinancialManager::compareDates(FinancialMovement financialMovement1,FinancialMovement financialMovement2){
+    return (financialMovement1.getDate()<financialMovement2.getDate());
+}
+
+void FinancialManager::sortFinancialMovementsFromTheOldest(){
+    sort(incomes.begin(),incomes.end(),compareDates);
 }
