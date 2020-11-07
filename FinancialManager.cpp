@@ -40,26 +40,26 @@ int FinancialManager::nextExpenseId() {
 }
 
 void FinancialManager::showBalanceFromCurrentMonth() {
-    cout<<"Incomes below: "<<endl;
+    cout<<endl<<"Incomes below: "<<endl;
     int incomesSummary=0;
     for(int i=0; i<incomes.size(); i++) {
         if(DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(incomes[i].getDate())) {
-            cout<<"------------------------------"<<endl;
+            cout<<"_____"<<endl;
             showIncomeDetails(incomes[i]);
             incomesSummary+=incomes[i].getAmount();
         }
     }
-
+    cout<<"_______________________________________"<<endl;
     cout<<endl<<"Expenses below: "<<endl;
     int expensesSummary=0;
     for(int i=0;i<expenses.size();i++){
         if(DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(expenses[i].getDate())){
-            cout<<"------------------------------"<<endl;
+            cout<<"_____"<<endl;
             showExpenseDetails(expenses[i]);
             expensesSummary+=expenses[i].getAmount();
         }
     }
-
+    cout<<"_______________________________________"<<endl;
     cout<<endl<<">Summary of current month<"<<endl;
     cout<<"Income: "<<incomesSummary<<endl;
     cout<<"Expense: "<<expensesSummary<<endl;
