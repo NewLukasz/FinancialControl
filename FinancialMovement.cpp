@@ -68,8 +68,8 @@ void FinancialMovement::typeDateItemAmountForFinancialMovement() {
 
 bool FinancialMovement::checkIfAmountInStringContainLetter(string amountInString) {
     for(int i=0; i<amountInString.length(); i++) {
-        if(isdigit(amountInString[i])==0) {
-            if(amountInString[i]==','||amountInString[i]=='.') {
+        if(isdigit(amountInString[i])==0){
+            if(amountInString[i]=='.') {
                 continue;
             } else {
                 return true;
@@ -87,6 +87,10 @@ bool FinancialMovement::checkIfAmountContainsMoreThanTwoDigitAfterComa(string am
             break;
         }
     }
+    if(positionOfComaInString==0){
+        return false;
+    }
+
     int const VALUE_OF_DISPLACEMENT_TO_DELETE_CORRECT_PART_OF_STRING_TO_MAKE_DETECTION=1;
     string signsAfterComa=amountInString.erase(0,positionOfComaInString+VALUE_OF_DISPLACEMENT_TO_DELETE_CORRECT_PART_OF_STRING_TO_MAKE_DETECTION);
     if(signsAfterComa.length()==2||signsAfterComa.length()==1||signsAfterComa.length()==0) {
