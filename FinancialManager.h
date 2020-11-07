@@ -18,6 +18,7 @@ class FinancialManager {
     int nextExpenseId();
     XMLFileWithIncomes xmlFileWithIncomes;
     XMLFileWithExpenses xmlfileWithExpenses;
+    void showSummary(int incomesSummary, int expensesSummary);
 
 public:
     FinancialManager(int loggedInUser, string fileNameForFileWithIncomes, string fileNameForFileWithExpenses)
