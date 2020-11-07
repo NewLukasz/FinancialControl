@@ -88,7 +88,11 @@ vector <Expense> XMLFinancialFile::loadExpensesFromXMLFile(int loggedInUserId, s
             xml.FindElem("Amount");
             expense.setAmount(atof(xml.GetData().c_str()));
             xml.OutOfElem();
-            expenses.push_back(expense);
+            if(expense.getUserId()==loggedInUserId) {
+                expenses.push_back(expense);
+            } else {
+                continue;
+            }
         }
         return expenses;
     }
