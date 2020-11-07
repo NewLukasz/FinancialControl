@@ -40,11 +40,13 @@ int main() {
                 break;
             case '3':
                 system("cls");
-                cout<<">>>Balance from current month<<"<<endl;
+                cout<<">>>Balance from current month<<<"<<endl;
                 financialControl.showBalanceFromCurrentMonth();
                 break;
             case '4':
-                cout<<"Show balance..."<<endl;
+                system("cls");
+                cout<<">>>Balance from previous month<<<"<<endl;
+                financialControl.showBalanceFromPreviousMonth();
                 break;
             case '5':
                 cout<<"Show balance..."<<endl;

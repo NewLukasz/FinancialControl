@@ -183,6 +183,13 @@ int DateAccesoryFunctions::getCurrentMonth() {
     return dataStructure.tm_mon;
 }
 
+int DateAccesoryFunctions::getPreviousMonth(){
+    time_t today;
+    time(&today);
+    tm dataStructure=*localtime(&today);
+    return dataStructure.tm_mon-1;
+}
+
 int DateAccesoryFunctions::getMonthFromTimeT(time_t dateForGetMonth){
     tm dataStructure=*localtime(&dateForGetMonth);
     return dataStructure.tm_mon;
@@ -191,6 +198,15 @@ int DateAccesoryFunctions::getMonthFromTimeT(time_t dateForGetMonth){
 bool DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck) {
     DateAccesoryFunctions dateAccesoryObject;
     if(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getCurrentMonth()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(time_t dateForCheck){
+    DateAccesoryFunctions dateAccesoryObject;
+    if(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getPreviousMonth()) {
         return true;
     } else {
         return false;

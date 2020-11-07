@@ -39,6 +39,14 @@ int FinancialManager::nextExpenseId() {
     }
 }
 
+void FinancialManager::showSummary(int incomesSummary,int expensesSummary){
+    cout<<"_______________________________________"<<endl;
+    cout<<endl<<">>>Summary<<<"<<endl;
+    cout<<"Income: "<<incomesSummary<<endl;
+    cout<<"Expense: "<<expensesSummary<<endl;
+    cout<<"Difference(income-expense): "<<incomesSummary-expensesSummary<<endl<<endl;
+}
+
 void FinancialManager::showBalanceFromCurrentMonth() {
     cout<<endl<<"Incomes below: "<<endl;
     int incomesSummary=0;
@@ -59,11 +67,31 @@ void FinancialManager::showBalanceFromCurrentMonth() {
             expensesSummary+=expenses[i].getAmount();
         }
     }
+    showSummary(incomesSummary,expensesSummary);
+    system("pause");
+}
+
+void FinancialManager::showBalanceFromPreviousMonth(){
+    cout<<endl<<"Incomes below: "<<endl;
+    int incomesSummary=0;
+    for(int i=0; i<incomes.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(incomes[i].getDate())) {
+            cout<<"_____"<<endl;
+            showIncomeDetails(incomes[i]);
+            incomesSummary+=incomes[i].getAmount();
+        }
+    }
     cout<<"_______________________________________"<<endl;
-    cout<<endl<<">Summary of current month<"<<endl;
-    cout<<"Income: "<<incomesSummary<<endl;
-    cout<<"Expense: "<<expensesSummary<<endl;
-    cout<<"Difference(income-expense): "<<incomesSummary-expensesSummary<<endl<<endl;
+    cout<<endl<<"Expenses below: "<<endl;
+    int expensesSummary=0;
+    for(int i=0;i<expenses.size();i++){
+        if(DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(expenses[i].getDate())){
+            cout<<"_____"<<endl;
+            showExpenseDetails(expenses[i]);
+            expensesSummary+=expenses[i].getAmount();
+        }
+    }
+    showSummary(incomesSummary,expensesSummary);
     system("pause");
 }
 
