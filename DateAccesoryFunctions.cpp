@@ -189,10 +189,10 @@ bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
     if(accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)==false) {
         return false;
     }
-
+/*
     if(accesoryObject.checkIfDateExceedCurrentMonthDay(dateForCheckInString)==false) {
         return false;
-    }
+    }*/
     return true;
 }
 

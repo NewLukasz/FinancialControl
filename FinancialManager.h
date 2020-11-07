@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "Income.h"
 #include "Expense.h"
 #include "DateAccesoryFunctions.h"
@@ -20,6 +21,8 @@ class FinancialManager {
     XMLFileWithExpenses xmlfileWithExpenses;
     void showSummary(int incomesSummary, int expensesSummary);
     time_t getLimitDate();
+    void sortFinancialMovementsFromTheOldest();
+    static bool compareDates(FinancialMovement financialMovement1, FinancialMovement financialMovement2);
 public:
     FinancialManager(int loggedInUser, string fileNameForFileWithIncomes, string fileNameForFileWithExpenses)
     : xmlFileWithIncomes(fileNameForFileWithIncomes), xmlfileWithExpenses(fileNameForFileWithExpenses), LOGGED_IN_USER(loggedInUser) {
