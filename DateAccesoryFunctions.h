@@ -22,6 +22,7 @@ class DateAccesoryFunctions {
 public:
     static bool checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck);
     static bool checkIfIndicatedDateIsInPreviousMonth(time_t dateForCheck);
+    static bool checkIfIndicatedDataIsInCustomedPeriodOfTime(time_t firstLimit, time_t secondLimit, time_t dateForCheck);
     static bool checkDate(string dateForCheck);
     static string convertTimeTToDateInStringWithCorrectFormat(time_t timeInTimeTFormat);
     static time_t getTodayDate();

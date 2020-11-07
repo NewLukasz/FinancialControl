@@ -119,7 +119,27 @@ void FinancialManager::showBalanceFromCustomPeriodOfTime() {
         }
     }while(firstLimit>secondLimit);
 
-    cout<<"Hello there"<<endl;
+    cout<<endl<<"Incomes below: "<<endl;
+    int incomesSummary=0;
+    for(int i=0; i<incomes.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(firstLimit,secondLimit,incomes[i].getDate())) {
+            cout<<"_____"<<endl;
+            showIncomeDetails(incomes[i]);
+            incomesSummary+=incomes[i].getAmount();
+        }
+    }
+    cout<<"_______________________________________"<<endl;
+    cout<<endl<<"Expenses below: "<<endl;
+    int expensesSummary=0;
+    for(int i=0; i<expenses.size(); i++) {
+        if(DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(firstLimit,secondLimit,expenses[i].getDate())) {
+            cout<<"_____"<<endl;
+            showExpenseDetails(expenses[i]);
+            expensesSummary+=expenses[i].getAmount();
+        }
+    }
+    showSummary(incomesSummary,expensesSummary);
+    cout<<"Summary is beetwen: "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(firstLimit)<<" and "<<DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(secondLimit)<<"."<<endl<<endl;
     system("pause");
 }
 
