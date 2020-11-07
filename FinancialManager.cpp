@@ -22,7 +22,7 @@ int FinancialManager::nextIncomeId(){
 void FinancialManager::addExpense(){
     Expense expense;
     expense.typeDateItemAmountForFinancialMovement();
-    expense.setExpenseId(nextExpenseId());
+    expense.setExpenseId(xmlfileWithExpenses.getLastExpenseIdFromXMLFile());
     expense.setUserId(LOGGED_IN_USER);
 
     xmlfileWithExpenses.addExpensesToXMLFile(expense);

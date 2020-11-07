@@ -12,6 +12,7 @@ public:
         fileNameForFileWithExpenses=sendedFileNameForFileWithExpenses;
     };
     void addExpensesToXMLFile(Expense expense);
+    int getLastExpenseIdFromXMLFile();
 };
 
 #endif // XMLFILEWITHEXPENSES_H
