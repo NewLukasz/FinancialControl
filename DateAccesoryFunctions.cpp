@@ -152,8 +152,24 @@ bool DateAccesoryFunctions::checkIfTypedMonthMoreThanTwelve(string stringDate) {
     return true;
 }
 
+bool DateAccesoryFunctions::checkIfDateExceedCurrentMonthDay(string stringDate) {
+    int typedYear=getYearFromStringDate(stringDate);
+    int typedMonth=getMonthFromStringDate(stringDate);
+    if(typedYear>getCurrentYear()) {
+        cout<<"You can add financial movents only up to last day of current month."<<endl;
+        return false;
+    }
+    if(typedMonth>getCurrentMonth()) {
+        cout<<"You can add financial movents only up to last day of current month."<<endl;
+        return false;
+    }
+
+    return true;
+}
+
 bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
     DateAccesoryFunctions accesoryObject;
+
     if(accesoryObject.checkLengthOfInputDate(dateForCheckInString)==false) {
         return false;
     }
@@ -173,6 +189,10 @@ bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
     if(accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)==false) {
         return false;
     }
+
+    if(accesoryObject.checkIfDateExceedCurrentMonthDay(dateForCheckInString)==false) {
+        return false;
+    }
     return true;
 }
 
@@ -183,14 +203,21 @@ int DateAccesoryFunctions::getCurrentMonth() {
     return dataStructure.tm_mon;
 }
 
-int DateAccesoryFunctions::getPreviousMonth(){
+int DateAccesoryFunctions::getCurrentYear() {
+    time_t today;
+    time(&today);
+    tm dataStructure=*localtime(&today);
+    return dataStructure.tm_year;
+}
+
+int DateAccesoryFunctions::getPreviousMonth() {
     time_t today;
     time(&today);
     tm dataStructure=*localtime(&today);
     return dataStructure.tm_mon-1;
 }
 
-int DateAccesoryFunctions::getMonthFromTimeT(time_t dateForGetMonth){
+int DateAccesoryFunctions::getMonthFromTimeT(time_t dateForGetMonth) {
     tm dataStructure=*localtime(&dateForGetMonth);
     return dataStructure.tm_mon;
 }
@@ -204,7 +231,7 @@ bool DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(time_t dateForC
     }
 }
 
-bool DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(time_t dateForCheck){
+bool DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(time_t dateForCheck) {
     DateAccesoryFunctions dateAccesoryObject;
     if(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getPreviousMonth()) {
         return true;
@@ -213,10 +240,10 @@ bool DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(time_t dateFor
     }
 }
 
-bool DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(time_t firstLimit, time_t secondLimit, time_t dateForCheck){
-    if(dateForCheck>firstLimit&&dateForCheck<secondLimit){
+bool DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(time_t firstLimit, time_t secondLimit, time_t dateForCheck) {
+    if(dateForCheck>firstLimit&&dateForCheck<secondLimit) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
