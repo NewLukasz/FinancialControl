@@ -137,15 +137,15 @@ bool DateAccesoryFunctions::checkIfInsertedDayIsAfter20200101(string stringDate)
     if(convertStringDataToTimeT(stringDate)<DATE_WHICH_FROM_YOU_CAN_ADD_FINANCIAL_MOVEMENT_IN_TIME_T) {
         cout<<"You can't add financial movements before 2000-01-01"<<endl;
         return false;
-    }else{
+    } else {
         return true;
     }
 }
 
-bool DateAccesoryFunctions::checkIfTypedMonthMoreThanTwelve(string stringDate){
+bool DateAccesoryFunctions::checkIfTypedMonthMoreThanTwelve(string stringDate) {
     const int QUANTITY_OF_MONTHS_COUNTING_FROM_ZERO=11;
     int numberOfMonth=getMonthFromStringDate(stringDate);
-    if (numberOfMonth>QUANTITY_OF_MONTHS_COUNTING_FROM_ZERO){
+    if (numberOfMonth>QUANTITY_OF_MONTHS_COUNTING_FROM_ZERO) {
         cout<<"Year has only 12 months."<<endl;
         return false;
     }
@@ -166,30 +166,33 @@ bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
         return false;
     }
 
-    if(accesoryObject.checkIfTypedMonthMoreThanTwelve(dateForCheckInString)==false){
+    if(accesoryObject.checkIfTypedMonthMoreThanTwelve(dateForCheckInString)==false) {
         return false;
     }
 
-    if(accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)==false){
+    if(accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)==false) {
         return false;
     }
     return true;
 }
 
-bool DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck){
-    string DateForCheckInString=convertTimeTToDateInStringWithCorrectFormat(dateForCheck);
-    int MonthOfDateForCheck=getMonthFromStringDate(DateForCheckInString);
-
-
+int DateAccesoryFunctions::getCurrentMonth() {
     time_t today;
     time(&today);
     tm dataStructure=*localtime(&today);
+    return dataStructure.tm_mon;
+}
 
-    int currentMounth=dataStructure.tm_mon;
+int DateAccesoryFunctions::getMonthFromTimeT(time_t dateForGetMonth){
+    tm dataStructure=*localtime(&dateForGetMonth);
+    return dataStructure.tm_mon;
+}
 
-    if(MonthOfDateForCheck==currentMounth){
+bool DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck) {
+    DateAccesoryFunctions dateAccesoryObject;
+    if(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getCurrentMonth()) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
