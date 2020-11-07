@@ -41,8 +41,10 @@ int FinancialManager::nextExpenseId() {
 
 void FinancialManager::showBalanceFromCurrentMonth() {
     for(int i=0; i<incomes.size(); i++) {
-        cout<<"------------------------------"<<endl;
-        showIncomeDetails(incomes[i]);
+        if(DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(incomes[i].getDate())) {
+            cout<<"------------------------------"<<endl;
+            showIncomeDetails(incomes[i]);
+        }
     }
     system("pause");
 }

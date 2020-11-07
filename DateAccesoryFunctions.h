@@ -17,6 +17,7 @@ class DateAccesoryFunctions {
     bool checkIfInsertedDayIsAfter20200101(string stringDate);
     bool checkIfTypedMonthMoreThanTwelve(string stringDate);
 public:
+    static bool checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck);
     static bool checkDate(string dateForCheck);
     static string convertTimeTToDateInStringWithCorrectFormat(time_t timeInTimeTFormat);
     static time_t getTodayDate();

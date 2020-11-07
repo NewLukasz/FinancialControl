@@ -176,4 +176,21 @@ bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
     return true;
 }
 
+bool DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck){
+    string DateForCheckInString=convertTimeTToDateInStringWithCorrectFormat(dateForCheck);
+    int MonthOfDateForCheck=getMonthFromStringDate(DateForCheckInString);
+
+
+    time_t today;
+    time(&today);
+    tm dataStructure=*localtime(&today);
+
+    int currentMounth=dataStructure.tm_mon;
+
+    if(MonthOfDateForCheck==currentMounth){
+        return true;
+    }else{
+        return false;
+    }
+}
 
