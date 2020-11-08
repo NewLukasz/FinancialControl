@@ -15,8 +15,6 @@ class FinancialManager {
     const int LOGGED_IN_USER;
     vector <Income> incomes;
     vector <Expense> expenses;
-    int nextIncomeId();
-    int nextExpenseId();
     XMLFileWithIncomes xmlFileWithIncomes;
     XMLFileWithExpenses xmlfileWithExpenses;
     void showSummary(int incomesSummary, int expensesSummary);

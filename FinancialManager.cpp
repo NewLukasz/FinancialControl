@@ -11,13 +11,6 @@ void FinancialManager::addIncome() {
     incomes.push_back(income);
 }
 
-int FinancialManager::nextIncomeId() {
-    if(incomes.size()==0) {
-        return 1;
-    } else {
-        return incomes.back().getIncomeId()+1;
-    }
-}
 
 void FinancialManager::addExpense() {
     Expense expense;
@@ -29,14 +22,6 @@ void FinancialManager::addExpense() {
 
     expenses.push_back(expense);
 
-}
-
-int FinancialManager::nextExpenseId() {
-    if(expenses.size()==0) {
-        return 1;
-    } else {
-        return expenses.back().getExpenseId()+1;
-    }
 }
 
 void FinancialManager::showSummary(int incomesSummary,int expensesSummary) {
