@@ -189,10 +189,10 @@ bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
     if(accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)==false) {
         return false;
     }
-/*
+
     if(accesoryObject.checkIfDateExceedCurrentMonthDay(dateForCheckInString)==false) {
         return false;
-    }*/
+    }
     return true;
 }
 
@@ -207,7 +207,8 @@ int DateAccesoryFunctions::getCurrentYear() {
     time_t today;
     time(&today);
     tm dataStructure=*localtime(&today);
-    return dataStructure.tm_year;
+    const int FACTOR_TO_RETURN_ACTUCAL_YEAR=1900;
+    return dataStructure.tm_year+FACTOR_TO_RETURN_ACTUCAL_YEAR;
 }
 
 int DateAccesoryFunctions::getPreviousMonth() {
