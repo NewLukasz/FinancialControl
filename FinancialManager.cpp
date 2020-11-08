@@ -73,6 +73,7 @@ void FinancialManager::showBalanceFromCurrentMonth() {
 }
 
 void FinancialManager::showBalanceFromPreviousMonth() {
+    sortFinancialMovementsFromTheOldest();
     cout<<endl<<"Incomes below: "<<endl;
     int incomesSummary=0;
     for(int i=0; i<incomes.size(); i++) {
@@ -108,6 +109,7 @@ time_t FinancialManager::getLimitDate() {
 }
 
 void FinancialManager::showBalanceFromCustomPeriodOfTime() {
+    sortFinancialMovementsFromTheOldest();
     time_t firstLimit, secondLimit;
 
     do {
