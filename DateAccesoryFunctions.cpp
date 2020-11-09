@@ -60,11 +60,7 @@ int DateAccesoryFunctions::getDayFromStringDate(string stringDate) {
 }
 
 bool DateAccesoryFunctions::checkIfYearIsLeap(int year) {
-    if (year % 400 == 0 ||(year % 4 == 0 && year % 100 != 0)) {
-        return true;
-    } else {
-        return false;
-    }
+    return (year % 400 == 0 ||(year % 4 == 0 && year % 100 != 0)) ? true: false;
 }
 
 int DateAccesoryFunctions::checkHowManyDaysHasIndicatedMonth(int month, int year) {
@@ -170,27 +166,27 @@ bool DateAccesoryFunctions::checkIfDateExceedCurrentMonthDay(string stringDate) 
 bool DateAccesoryFunctions::checkDate(string dateForCheckInString) {
     DateAccesoryFunctions accesoryObject;
 
-    if(accesoryObject.checkLengthOfInputDate(dateForCheckInString)==false) {
+    if(!accesoryObject.checkLengthOfInputDate(dateForCheckInString)) {
         return false;
     }
 
-    if(accesoryObject.checkPositionOfDashesInInputDate(dateForCheckInString)==false) {
+    if(!accesoryObject.checkPositionOfDashesInInputDate(dateForCheckInString)) {
         return false;
     }
 
-    if(accesoryObject.checkIfDayInIndicatedMonthExists(dateForCheckInString)==false) {
+    if(!accesoryObject.checkIfDayInIndicatedMonthExists(dateForCheckInString)) {
         return false;
     }
 
-    if(accesoryObject.checkIfTypedMonthMoreThanTwelve(dateForCheckInString)==false) {
+    if(!accesoryObject.checkIfTypedMonthMoreThanTwelve(dateForCheckInString)) {
         return false;
     }
 
-    if(accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)==false) {
+    if(!accesoryObject.checkIfInsertedDayIsAfter20200101(dateForCheckInString)) {
         return false;
     }
 
-    if(accesoryObject.checkIfDateExceedCurrentMonthDay(dateForCheckInString)==false) {
+    if(!accesoryObject.checkIfDateExceedCurrentMonthDay(dateForCheckInString)) {
         return false;
     }
     return true;
@@ -225,27 +221,15 @@ int DateAccesoryFunctions::getMonthFromTimeT(time_t dateForGetMonth) {
 
 bool DateAccesoryFunctions::checkIfIndicatedDateIsInCurrentMouth(time_t dateForCheck) {
     DateAccesoryFunctions dateAccesoryObject;
-    if(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getCurrentMonth()) {
-        return true;
-    } else {
-        return false;
-    }
+    return (dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getCurrentMonth()) ? true : false;
 }
 
 bool DateAccesoryFunctions::checkIfIndicatedDateIsInPreviousMonth(time_t dateForCheck) {
     DateAccesoryFunctions dateAccesoryObject;
-    if(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getPreviousMonth()) {
-        return true;
-    } else {
-        return false;
-    }
+    return(dateAccesoryObject.getMonthFromTimeT(dateForCheck)==dateAccesoryObject.getPreviousMonth()) ? true : false;
 }
 
 bool DateAccesoryFunctions::checkIfIndicatedDataIsInCustomedPeriodOfTime(time_t firstLimit, time_t secondLimit, time_t dateForCheck) {
-    if(dateForCheck>firstLimit&&dateForCheck<secondLimit) {
-        return true;
-    } else {
-        return false;
-    }
+    return (dateForCheck>firstLimit&&dateForCheck<secondLimit) ? true : false;
 }
 
