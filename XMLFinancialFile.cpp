@@ -21,7 +21,7 @@ void XMLFinancialFile::addFinancialMovementToFile(FinancialMovement financialMov
         xml.AddElem("ExpenseId", idOfFinancialMovement);
     }
     xml.AddElem("UserId",financialMovement.getUserId());
-    xml.AddElem("Date",financialMovement.getDate());
+    xml.AddElem("Date",DateAccesoryFunctions::convertTimeTToDateInStringWithCorrectFormat(financialMovement.getDate()));
     xml.AddElem("Item",financialMovement.getItem());
     xml.AddElem("Amount",AccesoryFunctions::convertDoubleToString(financialMovement.getAmount()));
     xml.Save(fileName);
@@ -47,7 +47,7 @@ vector <Income> XMLFinancialFile::loadIncomesFromXMLFile(int loggedInUserId, str
             xml.FindElem("UserId");
             income.setUserId(atoi(xml.GetData().c_str()));
             xml.FindElem("Date");
-            income.setDate(atoi(xml.GetData().c_str()));
+            income.setDate(DateAccesoryFunctions::convertStringDataToTimeT((xml.GetData().c_str())));
             xml.FindElem("Item");
             income.setItem(xml.GetData().c_str());
             xml.FindElem("Amount");
